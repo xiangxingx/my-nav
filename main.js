@@ -36,9 +36,9 @@ function init() {
   }
 }
 
-var keyboard = init()
-kbdKeys = keyboard.keys
-kbdHash = keyboard.hash
+const keyboard = init()
+const kbdKeys = keyboard.keys
+const kbdHash = keyboard.hash
 
 // 生成键盘
 // 行

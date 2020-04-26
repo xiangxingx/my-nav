@@ -32,10 +32,11 @@ main {
   width: 560px;
   height: 38px;
   border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   margin: 0 15px;
 }
-.search > form > input{
+.search > form > input {
   background: none;
   outline: none;
   box-sizing: border-box;

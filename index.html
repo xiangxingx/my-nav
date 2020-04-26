@@ -3,15 +3,29 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>我的网站导航</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <main>
-    <div class="keyBoard" id="main"></div>
+    <div class="main">
+      <div class="search">
+        <svg class="bingIcon" aria-hidden="true">
+          <use xlink:href="#icon-bing"></use>
+        </svg>
+        <form action="https://cn.bing.com/search" method="get">
+          <input type="text" name="q" autocomplete="off">
+          <input type="image" src="./img/search.png">
+        </form>
+      </div>
+      <div class="keyBoard" id="keyBoard"></div>
+    </div>
   </main>
+
+  <script src="//at.alicdn.com/t/font_1782513_2ppn715nfpq.js"></script>
+  <script src="./main.js"></script>
 </body>
-<script src="./main.js"></script>
 
 </html>

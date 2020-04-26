@@ -6,16 +6,69 @@ body {
   background: url(./img/wall.png);
 }
 main {
+  position: relative;
+  height: 100vh;
+}
+.main {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+}
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-bottom: 46px;
 }
-#main {
-  text-align: center;
-  padding: 24px;
+.search .bingIcon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  overflow: hidden;
+}
+.search > form {
+  width: 560px;
+  height: 38px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 15px;
+}
+.search > form > input{
+  background: none;
+  outline: none;
+  box-sizing: border-box;
+  border: 0;
+  background-color: white;
+  float: left;
+  padding: 0 20px;
+}
+.search > form > input:first-child {
+  width: 522px;
+  height: 100%;
+  font-size: 16px;
+}
+.search > form > input:last-child {
+  height: 38px;
+  width: 38px;
+  padding: 6px;
+}
+
+.search > form .bingIcon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+.keyBoard {
   background: rgba(120, 120, 120, 0.2);
   border-radius: 10px;
+  padding: 24px;
+  min-width: 920px;
 }
 .key {
   margin: 10px;
@@ -26,7 +79,6 @@ main {
   background-color: #000;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   user-select: none;
-  position: relative;
 }
 .text {
   display: inline-block;
@@ -50,7 +102,7 @@ main {
   color: #666666;
   font-size: 12px;
   text-align: center;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition-duration: 0.4s;

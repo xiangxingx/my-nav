@@ -39,13 +39,14 @@ function init() {
 const keyboard = init()
 const kbdKeys = keyboard.keys
 const kbdHash = keyboard.hash
+var search = false
 
 // 生成键盘
 // 行
 function createRow() {
   var rows = document.createElement('div')
   rows.className = 'row'
-  var main = document.getElementById('main')
+  var main = document.getElementById('keyBoard')
   main.appendChild(rows)
   return rows
 }
@@ -117,17 +118,35 @@ function generateKbd(kbdKeys, kbdHash) {
   }
 }
 
+// 监听搜索框
+function listenInput() {
+  let input = document.querySelector('input')
+  input.onfocus = function () {
+    search = true
+  }
+  input.onblur = function () {
+    search = false
+  }
+}
+
 // 监听键盘事件
 function listenKbd(kbdHash) {
   document.onkeypress = function (ev) {
-    var key = ev.key
-    var letterKey = /[a-z]/.test(key)
-    if (letterKey) {
-      var website = kbdHash[key]
-      window.open('http://' + website, '_blank')
+    if (!search) {
+      let key = ev.key
+      let letterKey = /[a-z]/.test(key)
+      if (letterKey) {
+        let website = kbdHash[key]
+        if (website) {
+          window.open('http://' + website, '_blank')
+        } else {
+          alert(key.toUpperCase() + ' 键没有对应的网址，请先编辑。')
+        }
+      }
     }
   }
 }
 
+listenInput()
 listenKbd(kbdHash)
 generateKbd(kbdKeys, kbdHash)
